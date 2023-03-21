@@ -64,7 +64,7 @@ main {
   justify-content: space-around;
   padding: 0;
   margin-bottom: 1rem;
-  width: 300px;
+  width: 600px;
 }
 
 input {
@@ -76,6 +76,11 @@ h1,
 h2,
 p {
   font-weight: normal;
+}
+
+h1 {
+  font-size: 3em;
+  margin: 0;
 }
 
 @media (prefers-color-scheme: light) {
@@ -93,4 +98,8 @@ p {
 
 .italic {
   font-style: italic;
+}
+
+.small {
+  font-size: 0.8em;
 }

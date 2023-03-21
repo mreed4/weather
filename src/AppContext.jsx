@@ -1,17 +1,20 @@
-import { createContext } from "react";
+import { createContext, useState } from "react";
 
-const AppContext = React.createContext();
+const AppContext = createContext();
 
-export function AppWrapper({ children }) {
+function AppProvider({ children }) {
   const [location, setLocation] = useState("");
   const [unit, setUnit] = useState("f");
   const [temp, setTemp] = useState("");
   const [latLong, setLatLong] = useState({});
   const [weather, setWeather] = useState("");
   const [weatherId, setWeatherId] = useState("");
+  const [cityName, setCityName] = useState("");
+  const [isDisabled, setIsDisabled] = useState(true);
   const { lat, lon } = latLong;
 
   function getWeather() {
+    setLocation("");
     fetch(`https://api.openweathermap.org/data/2.5/weather?q=${location}&units=imperial&appid=5a35ef8f1d8400ee047265d3be990487`)
       .then((response) => response.json())
       .then((data) => {
@@ -36,24 +39,32 @@ export function AppWrapper({ children }) {
     }
   }
 
+  function handleOnChange(e) {
+    const { value } = e.target;
+    if (value.length > 0) {
+      setIsDisabled(false);
+      setLocation(value);
+    } else {
+      setIsDisabled(true);
+    }
+  }
+
   const value = {
     location,
-    setLocation,
     unit,
-    setUnit,
     temp,
-    setTemp,
-    latLong,
-    setLatLong,
-    weather,
-    setWeather,
-    weatherId,
-    setWeatherId,
     lat,
     lon,
+    weather,
+    weatherId,
+    cityName,
+    isDisabled,
     getWeather,
     convertTemperature,
+    handleOnChange,
   };
 
   return <AppContext.Provider value={value}>{children}</AppContext.Provider>;
 }
+
+export { AppContext, AppProvider };
