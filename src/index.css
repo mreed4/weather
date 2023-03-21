@@ -48,7 +48,7 @@ button:hover {
 }
 
 button[disabled]:hover {
-  border-color: #1a1a1a;
+  border-color: transparent;
   cursor: not-allowed;
 }
 
@@ -59,16 +59,12 @@ button:focus-visible {
 
 main {
   display: flex;
-  flex-direction: column-reverse;
+  flex-direction: row;
   align-items: center;
   justify-content: space-around;
   padding: 0;
   margin-bottom: 1rem;
   width: 300px;
-}
-
-main > div:first-child {
-  width: 150px;
 }
 
 input {
@@ -77,6 +73,7 @@ input {
 }
 
 h1,
+h2,
 p {
   font-weight: normal;
 }

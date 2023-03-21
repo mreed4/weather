@@ -9,7 +9,7 @@ function App() {
   const [latLong, setLatLong] = useState({});
   const [cityName, setCityName] = useState("");
   const [weather, setWeather] = useState("");
-  const [weatherIcon, setWeatherIcon] = useState("");
+  const [weatherId, setWeatherId] = useState("");
   const { lat, lon } = latLong;
 
   function getWeather() {
@@ -18,7 +18,7 @@ function App() {
     setTemp("");
     setLatLong({});
     setCityName("");
-    setWeatherIcon("");
+    setWeatherId("");
     setWeather("");
     setIsDisabled(true);
 
@@ -31,7 +31,7 @@ function App() {
         setTemp(city?.main.temp);
         setLatLong({ ...coords });
         setWeather(city?.weather[0].main);
-        setWeatherIcon(city?.weather[0].icon);
+        setWeatherId(city?.weather[0].id);
         console.log(data);
       })
       .catch((error) => console.error(error));
@@ -60,15 +60,14 @@ function App() {
     <div className="App">
       <main>
         <div>
-          <h1>{cityName}</h1>
-          <p>
-            {weather && Number(temp, 10).toFixed(1) + "\u00B0" + unit.toUpperCase()} {weather}
-          </p>
+          <h1>
+            {temp && Number(temp, 10).toFixed(1) + "\u00B0" + unit.toUpperCase()} <i className={`wi wi-owm-${weatherId}`}></i>
+          </h1>
+          <h2>{cityName}</h2>
           {/* <p className="italic">
             {lat} {lon}
           </p> */}
         </div>
-        <div>{weatherIcon && <img src={`https://openweathermap.org/img/wn/${weatherIcon}@2x.png`} alt={weather} />}</div>
       </main>
       <input type="text" name="city-name" id="city-name" placeholder="City name" value={location} onChange={handleOnChange} />
       <button onClick={getWeather} disabled={isDisabled}>
