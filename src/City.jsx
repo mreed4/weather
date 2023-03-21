@@ -7,14 +7,16 @@ export default function City() {
   const { cityName, lat, lon } = useContext(AppContext);
 
   return (
-    <div>
-      <h2>{cityName}</h2>
-      <p className="italic">
-        {cityName && <FontAwesomeIcon icon={faMapLocationDot} />}{" "}
-        <span className="small">
-          {lat} {lon}
-        </span>
-      </p>
-    </div>
+    cityName && (
+      <div>
+        <h2>{cityName}</h2>
+        <p className="italic">
+          {cityName && <FontAwesomeIcon icon={faMapLocationDot} />}{" "}
+          <span className="small">
+            {lat} {lon}
+          </span>
+        </p>
+      </div>
+    )
   );
 }

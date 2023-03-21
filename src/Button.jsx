@@ -5,7 +5,7 @@ export default function Button() {
   const { getWeather, isDisabled } = useContext(AppContext);
 
   return (
-    <button onClick={getWeather} disabled={isDisabled}>
+    <button type="button" onClick={getWeather} disabled={isDisabled}>
       Get weather
     </button>
   );
