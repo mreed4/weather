@@ -1,6 +1,7 @@
 import { AppProvider } from "./AppContext";
 import "./App.css";
 import Weather from "./Weather";
+import Forecast from "./Forecast";
 import Input from "./Input";
 import Button from "./Button";
 import City from "./City";
@@ -11,6 +12,7 @@ function App() {
       <div className="App">
         <main>
           <Weather />
+          <Forecast />
           <City />
         </main>
         <Input />
