@@ -13,7 +13,7 @@ export default function Forecast() {
         // console.log(data);
         const noon = data.list.filter((item) => item.dt_txt.includes("12:00:00"));
         const weatherIds = noon.map((item) => item.weather[0].id);
-        const temps = noon.map((item) => item.main.temp);
+        const temps = noon.map((item) => item.main.feels_like);
         const dates = noon.map((item) => convertDate(item.dt_txt));
         const forecastList = weatherIds.map((id, index) => {
           return {

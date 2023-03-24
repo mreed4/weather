@@ -24,7 +24,7 @@ function AppProvider({ children }) {
         const city = data;
         const coords = city?.coord;
         setCityName(city?.name);
-        setTemp(city?.main?.temp);
+        setTemp(city?.main?.feels_like);
         setLatLong({ ...coords });
         setWeather(city?.weather[0]?.main);
         setWeatherId(city?.weather[0]?.id);
