@@ -1,5 +1,7 @@
 import { createContext, useState } from "react";
-import { API_KEY } from "../config.js";
+import { config } from "../config.js";
+
+const API_KEY = config.API_KEY;
 
 const AppContext = createContext();
 
@@ -19,6 +21,7 @@ function AppProvider({ children }) {
     setIsDisabled(true);
     setTemp("");
     setWeather("");
+    setCityName("");
     fetch(`https://api.openweathermap.org/data/2.5/weather?q=${location}&units=imperial&appid=${API_KEY}`)
       .then((response) => response.json())
       .then((data) => {
