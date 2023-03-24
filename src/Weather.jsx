@@ -3,13 +3,13 @@ import { AppContext } from "./AppContext";
 import Temperature from "./Temperature";
 
 export default function Weather() {
-  const { temp, unit, weather, weatherId } = useContext(AppContext);
+  const { temp, weather, weatherId } = useContext(AppContext);
 
   return (
     weather && (
-      <h1>
+      <p className="weather-now">
         {temp && <Temperature temperature={temp} />} <i className={`wi wi-owm-${weatherId}`}></i>
-      </h1>
+      </p>
     )
   );
 }
