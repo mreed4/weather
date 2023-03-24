@@ -1,13 +1,14 @@
 import { useEffect, useState, useContext } from "react";
 import { AppContext } from "./AppContext";
 import Temperature from "./Temperature";
+import { API_KEY } from "../config.js";
 
 export default function Forecast() {
   const [forecast, setForecast] = useState([]);
   const { lat, lon, cityName, convertDate } = useContext(AppContext);
 
   useEffect(() => {
-    fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&units=imperial&appid=5a35ef8f1d8400ee047265d3be990487`)
+    fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&units=imperial&appid=${API_KEY}`)
       .then((response) => response.json())
       .then((data) => {
         // console.log(data);
