@@ -35,7 +35,7 @@ export default function Forecast() {
             <li key={i} className="forecast-day">
               <i className={`wi wi-owm-${day.id} larger`}></i>
               <Temperature temperature={day.temp} />
-              <span>{day.date}</span>
+              <span className="small italic">{day.date}</span>
             </li>
           );
         })}
