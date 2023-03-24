@@ -42,6 +42,11 @@ function AppProvider({ children }) {
     }
   }
 
+  function convertDate(date) {
+    const formatted = date.slice(date.indexOf("-") + 1, date.indexOf(" ")).replace(/\-/g, "/");
+    return formatted;
+  }
+
   function handleOnChange(e) {
     const { value } = e.target;
     if (value.length > 0) {
@@ -64,6 +69,7 @@ function AppProvider({ children }) {
     isDisabled,
     getWeather,
     convertTemperature,
+    convertDate,
     handleOnChange,
   };
 
