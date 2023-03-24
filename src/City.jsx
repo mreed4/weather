@@ -4,5 +4,5 @@ import { AppContext } from "./AppContext";
 export default function City() {
   const { cityName } = useContext(AppContext);
 
-  return cityName && <h2>{cityName}</h2>;
+  return cityName && <h1>{cityName}</h1>;
 }
