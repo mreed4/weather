@@ -13,6 +13,19 @@
   -webkit-text-size-adjust: 100%;
 }
 
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
+
 * {
   box-sizing: border-box;
 }
@@ -42,28 +55,8 @@ p {
 }
 
 h1 {
-  font-size: 3em;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
-}
-
-.italic {
-  font-style: italic;
-}
-
-.small {
-  font-size: 0.8em;
+  font-size: 1.5em;
+  margin-bottom: 0.5rem;
 }
 
 ol {
@@ -72,6 +65,20 @@ ol {
   padding: 0;
   display: flex;
   justify-content: space-evenly;
+  margin-bottom: 3rem;
+}
+
+.weather-now {
+  font-size: 3em;
+  margin-bottom: 4rem;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.small {
+  font-size: 0.8em;
 }
 
 .forecast-day {
