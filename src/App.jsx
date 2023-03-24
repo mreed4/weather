@@ -11,9 +11,9 @@ function App() {
     <AppProvider>
       <div className="App">
         <main>
+          <City />
           <Weather />
           <Forecast />
-          <City />
         </main>
         <Input />
         <Button />
