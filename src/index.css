@@ -13,19 +13,6 @@
   -webkit-text-size-adjust: 100%;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
-}
-
 * {
   box-sizing: border-box;
 }
@@ -68,6 +55,14 @@ ol {
   margin-bottom: 3rem;
 }
 
+hr {
+  width: 3em;
+  height: 4px;
+  border: 0;
+  background-color: rgba(255, 255, 255, 0.87);
+  margin-left: 0;
+}
+
 .weather-now {
   font-size: 3em;
   margin-bottom: 4rem;
@@ -96,4 +91,15 @@ ol {
 
 .larger {
   font-size: 2em;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+
+  hr {
+    background-color: #213547;
+  }
 }
