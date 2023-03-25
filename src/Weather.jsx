@@ -7,9 +7,9 @@ export default function Weather() {
 
   return (
     weather && (
-      <p className="weather-now">
+      <div className="weather-now">
         {temp && <Temperature temperature={temp} />} <i className={`wi wi-owm-${weatherId}`}></i>
-      </p>
+      </div>
     )
   );
 }
