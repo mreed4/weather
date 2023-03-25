@@ -32,8 +32,8 @@ export default function Forecast() {
   }, [cityName]);
 
   return (
-    forecast && (
-      <ol>
+    cityName && (
+      <ol className="forecast">
         {forecast.map((day, i) => {
           return (
             <li key={i} className="forecast-day">
