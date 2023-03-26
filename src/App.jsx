@@ -9,16 +9,14 @@ import City from "./City";
 function App() {
   return (
     <AppProvider>
-      <div className="App">
-        <main>
-          <City />
-          <Weather />
-          <Forecast />
-        </main>
+      <main className="App">
+        <City />
+        <Weather />
+        <Forecast />
         <Input />
         <Button />
         {/* <button onClick={convertTemperature}>{(unit === "c" ? "f" : "c").toUpperCase()}</button> */}
-      </div>
+      </main>
     </AppProvider>
   );
 }
