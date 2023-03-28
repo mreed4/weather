@@ -2,10 +2,10 @@ import { useContext } from "react";
 import { AppContext } from "./AppContext";
 
 export default function Button() {
-  const { getWeather, isDisabled } = useContext(AppContext);
+  const { isDisabled } = useContext(AppContext);
 
   return (
-    <button type="button" onClick={getWeather} disabled={isDisabled}>
+    <button type="submit" disabled={isDisabled}>
       Get weather
     </button>
   );

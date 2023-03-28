@@ -51,13 +51,24 @@ function AppProvider({ children }) {
     return formatted;
   }
 
-  function handleOnChange(e) {
+  function handleInputChange(e) {
     const { value } = e.target;
     if (value.length > 0) {
       setIsDisabled(false);
       setLocation(value);
     } else {
       setIsDisabled(true);
+    }
+  }
+
+  function handleFormSubmit(e) {
+    e.preventDefault();
+    getWeather();
+  }
+
+  function handleEnterKey(e) {
+    if (e.key === "Enter") {
+      getWeather();
     }
   }
 
@@ -74,7 +85,9 @@ function AppProvider({ children }) {
     getWeather,
     convertTemperature,
     convertDate,
-    handleOnChange,
+    handleInputChange,
+    handleFormSubmit,
+    handleEnterKey,
   };
 
   return <AppContext.Provider value={value}>{children}</AppContext.Provider>;
