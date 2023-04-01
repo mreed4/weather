@@ -1,8 +1,8 @@
 import { useContext } from "react";
 import { AppContext } from "./AppContext";
 
-export default function Input() {
-  const { location, handleInputChange, handleEnterKey } = useContext(AppContext);
+export default function Input({ inputValue }) {
+  const { handleInputChange, handleEnterKey } = useContext(AppContext);
 
   return (
     <input
@@ -10,7 +10,7 @@ export default function Input() {
       name="city-name"
       id="city-name"
       placeholder="City name"
-      value={location}
+      value={inputValue}
       onChange={handleInputChange}
       onKeyUp={handleEnterKey}
     />

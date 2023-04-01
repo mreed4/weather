@@ -4,11 +4,11 @@ import { useContext } from "react";
 import { AppContext } from "./AppContext";
 
 export default function Inputs() {
-  const { handleFormSubmit } = useContext(AppContext);
+  const { location, handleFormSubmit } = useContext(AppContext);
 
   return (
     <form onSubmit={handleFormSubmit}>
-      <Input />
+      <Input inputValue={location} />
       <Button />
       {/* <button onClick={convertTemperature}>{(unit === "c" ? "f" : "c").toUpperCase()}</button> */}
     </form>

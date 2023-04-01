@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useState, useCallback } from "react";
 import { config } from "../config.js";
 
 const API_KEY = config.API_KEY;
@@ -17,7 +17,6 @@ function AppProvider({ children }) {
   const { lat, lon } = latLong;
 
   function getWeather() {
-    setLocation("");
     setIsDisabled(true);
     setTemp("");
     setWeather("");
@@ -51,26 +50,37 @@ function AppProvider({ children }) {
     return formatted;
   }
 
-  function handleInputChange(e) {
-    const { value } = e.target;
-    if (value.length > 0) {
-      setIsDisabled(false);
-      setLocation(value);
-    } else {
-      setIsDisabled(true);
-    }
-  }
+  const handleInputChange = useCallback(
+    (e) => {
+      const { value } = e.target;
+      if (value.length > 0) {
+        setIsDisabled(false);
+        setLocation(value);
+      } else {
+        setIsDisabled(true);
+      }
+    },
+    [setLocation]
+  );
 
-  function handleFormSubmit(e) {
-    e.preventDefault();
-    getWeather();
-  }
-
-  function handleEnterKey(e) {
-    if (e.key === "Enter") {
+  const handleFormSubmit = useCallback(
+    (e) => {
+      e.preventDefault();
       getWeather();
-    }
-  }
+      setLocation("");
+    },
+    [location]
+  );
+
+  const handleEnterKey = useCallback(
+    (e) => {
+      if (e.key === "Enter") {
+        getWeather();
+        setLocation("");
+      }
+    },
+    [location]
+  );
 
   const value = {
     location,
