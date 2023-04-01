@@ -12,7 +12,7 @@ export default function Input({ inputValue }) {
       placeholder="City name"
       value={inputValue}
       onChange={handleInputChange}
-      onKeyUp={handleEnterKey}
+      // onKeyUp={handleEnterKey}
     />
   );
 }
