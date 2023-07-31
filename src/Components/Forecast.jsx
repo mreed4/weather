@@ -1,7 +1,7 @@
 import { useEffect, useState, useContext } from "react";
 import { AppContext } from "./AppContext";
 import Temperature from "./Temperature";
-import { config } from "../config.js";
+import { config } from "../../config.js";
 
 const API_KEY = config.API_KEY;
 

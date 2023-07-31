@@ -1,5 +1,7 @@
 import { AppProvider } from "./AppContext";
-import "./App.css";
+
+import "../css/App.css";
+
 import Weather from "./Weather";
 import Forecast from "./Forecast";
 import City from "./City";
