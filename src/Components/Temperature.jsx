@@ -1,9 +1,14 @@
 import PropTypes from "prop-types";
 
-export default function Temperature({ temperature }) {
-  return <span>{temperature + "\u00B0"}</span>;
+export default function Temperature({ temperature, showIcon = false }) {
+  return (
+    <span>
+      {showIcon && <i class="fa-solid fa-temperature-three-quarters small dim"></i>} {temperature}°
+    </span>
+  );
 }
 
 Temperature.propTypes = {
   temperature: PropTypes.number.isRequired,
+  showIcon: PropTypes.bool,
 };
