@@ -32,19 +32,17 @@ export default function Forecast() {
   }, [cityName]);
 
   return (
-    cityName && (
-      <ol className="forecast">
-        {forecast.map((day, i) => {
-          const { date, temp, id } = day;
-          return (
-            <li key={i} className="forecast-day">
-              <i className={`wi wi-owm-${id} larger`}></i>
-              <Temperature temperature={temp} />
-              <span className="small italic">{date}</span>
-            </li>
-          );
-        })}
-      </ol>
-    )
+    <ol className="forecast">
+      {forecast.map((day, i) => {
+        const { date, temp, id } = day;
+        return (
+          <li key={i} className="forecast-day">
+            <i className={`wi wi-owm-${id} larger`}></i>
+            <Temperature temperature={temp} />
+            <span className="small italic">{date}</span>
+          </li>
+        );
+      })}
+    </ol>
   );
 }

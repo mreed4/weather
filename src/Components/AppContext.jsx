@@ -37,6 +37,7 @@ function AppProvider({ children }) {
       cityName: name,
     }));
   }
+
   function convertDate(date) {
     const formatted = date.slice(date.indexOf("-") + 1, date.indexOf(" ")).replace(/\-/g, "/");
     return formatted;

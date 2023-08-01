@@ -6,13 +6,11 @@ import WeatherIcon from "./WeatherIcon";
 
 export default function Weather() {
   const { appState } = useContext(AppContext);
-  const { weather, temp } = appState;
+  const { temp } = appState;
 
   return (
-    weather && (
-      <div className="weather-now">
-        {temp && <Temperature temperature={temp} />} {weather && <WeatherIcon />}
-      </div>
-    )
+    <div className="weather-now">
+      <Temperature temperature={temp} /> <WeatherIcon />
+    </div>
   );
 }

@@ -6,17 +6,15 @@ import { faMapLocationDot } from "@fortawesome/free-solid-svg-icons";
 
 export default function LatLong() {
   const { appState } = useContext(AppContext);
-  const { cityName, latLong } = appState;
+  const { latLong } = appState;
   const { lat, lon } = latLong;
 
   return (
-    cityName && (
-      <p className="italic">
-        {<FontAwesomeIcon icon={faMapLocationDot} />}
-        <span className="small">
-          {lat} {lon}
-        </span>
-      </p>
-    )
+    <p className="italic">
+      {<FontAwesomeIcon icon={faMapLocationDot} />}
+      <span className="small">
+        {lat} {lon}
+      </span>
+    </p>
   );
 }
