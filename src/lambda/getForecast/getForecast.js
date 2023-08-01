@@ -1,9 +1,10 @@
+// Docs on event and context https://docs.netlify.com/functions/build/#code-your-function-2
 const handler = async (event) => {
-  const { location } = event.queryStringParameters;
+  const { lat, lon } = event.queryStringParameters;
   const API_KEY = process.env.API_KEY;
 
-  const endpoint = "https://api.openweathermap.org/data/2.5/weather";
-  const searchOptions = [`q=${location}`, `appid=${API_KEY}`, "units=imperial"].join("&");
+  const endpoint = "https://api.openweathermap.org/data/2.5/forecast";
+  const searchOptions = [`appid=${API_KEY}`, "units=imperial", `lat=${lat}`, `lon=${lon}`].join("&");
 
   const url = [endpoint, searchOptions].join("?");
 
@@ -16,8 +17,6 @@ const handler = async (event) => {
       body: JSON.stringify(data),
     };
   }
-
-  console.log(data);
 
   try {
     return {

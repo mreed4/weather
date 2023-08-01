@@ -2,7 +2,8 @@ import { useContext } from "react";
 import { AppContext } from "./AppContext";
 
 export default function City() {
-  const { cityName } = useContext(AppContext);
+  const { appState } = useContext(AppContext);
+  const { cityName } = appState;
 
   return (
     cityName && (

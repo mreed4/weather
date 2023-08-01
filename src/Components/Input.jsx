@@ -1,18 +1,9 @@
 import { useContext } from "react";
 import { AppContext } from "./AppContext";
 
-export default function Input({ inputValue }) {
-  const { handleInputChange, handleEnterKey } = useContext(AppContext);
+export default function Input() {
+  const { handleInputChange, appState } = useContext(AppContext);
+  const { location } = appState;
 
-  return (
-    <input
-      type="text"
-      name="city-name"
-      id="city-name"
-      placeholder="City name"
-      value={inputValue}
-      onChange={handleInputChange}
-      // onKeyUp={handleEnterKey}
-    />
-  );
+  return <input type="text" name="city-name" id="city-name" placeholder="City name" value={location} onChange={handleInputChange} />;
 }

@@ -9,7 +9,7 @@ export default function Inputs() {
 
   return (
     <form onSubmit={handleFormSubmit}>
-      <Input inputValue={location} />
+      <Input />
       <Button />
       {/* <button onClick={convertTemperature}>{(unit === "c" ? "f" : "c").toUpperCase()}</button> */}
     </form>

@@ -1,9 +1,9 @@
-import { useContext } from "react";
-import { AppContext } from "./AppContext";
+import PropTypes from "prop-types";
 
-export default function Temperature(props) {
-  // console.log(props);
-  const { weather } = useContext(AppContext);
-
-  return weather && <span>{Number(props.temperature, 10).toFixed(1) + "\u00B0"}</span>;
+export default function Temperature({ temperature }) {
+  return <span>{temperature + "\u00B0"}</span>;
 }
+
+Temperature.propTypes = {
+  temperature: PropTypes.number.isRequired,
+};
