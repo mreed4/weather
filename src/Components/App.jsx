@@ -13,7 +13,7 @@ function App() {
     <AppProvider>
       <main className="App">
         <City />
-        <LatLong />
+        {/* <LatLong /> */}
         <Weather />
         <Forecast />
         <Inputs />
