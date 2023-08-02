@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 export default function Temperature({ temperature, showIcon = false }) {
   return (
     <span>
-      {showIcon && <i class="fa-solid fa-temperature-three-quarters small dim"></i>} {temperature}°
+      {showIcon && <i className="fa-solid fa-temperature-three-quarters small dim"></i>} {temperature}°
     </span>
   );
 }

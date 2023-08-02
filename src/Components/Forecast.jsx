@@ -20,7 +20,7 @@ export default function Forecast() {
       const noon = list.filter((day) => day.dt_txt.includes("12:00:00"));
 
       const forecast = noon.map((day) => {
-        console.log(day);
+        // console.log(day);
         const { dt_txt, main, weather } = day;
         const { temp, feels_like, humidity } = main;
         const { id } = weather[0];
@@ -43,7 +43,7 @@ export default function Forecast() {
             <Temperature temperature={temp} showIcon={true} />
             {/* <span className="small italic">{feels_like}</span> */}
             <span className="icon-and-text">
-              <i class="fa-solid fa-droplet small dim"></i> {humidity}%
+              <i className="fa-solid fa-droplet small dim"></i> {humidity}%
             </span>
             {/* <span className="small italic">{date}</span> */}
           </li>
